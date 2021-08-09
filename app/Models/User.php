@@ -24,8 +24,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        // SESUAIKAN DENGAN TABLE ATAU DATA YANG DIBUTUHKAN
         'name',
         'email',
+        'username',
+        'phone_number',
+        'roles',
         'password',
     ];
 
@@ -58,4 +62,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //Untuk Relasi Table
+    public function transactions()
+    {
+        // hasMany (Untuk definisi one-to-many)
+        // Transaction::class, 'field relasi (FK)', 'id yang dimiliki (local id)'
+        return $this->hasMany(Transaction::class, 'users_id', 'id'); // Menyambungkan table user dan transaction
+    }
 }
