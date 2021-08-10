@@ -18,7 +18,7 @@ class ProductCategory extends Model
      */
     protected $fillable = [
         // Hanya name, karena pada table ini name saja yang input manual (tidak otomatis)
-        'name'
+        'name',
     ];
 
     //Untuk Relasi Table
@@ -26,7 +26,7 @@ class ProductCategory extends Model
     {
         // hasMany (Untuk definisi one-to-many)
         // Transaction::class, 'field relasi (FK)', 'id yang dimiliki (local id)'
-        return $this->hasMany(Transaction::class, 'categories_id', 'id'); // Menyambungkan table user dan transaction
+        return $this->hasMany(Product::class, 'categories_id', 'id'); // Menyambungkan table user dan transaction
     }
 
 }
