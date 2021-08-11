@@ -28,4 +28,7 @@ Route::post('login', [UserController::class, 'login']);
 // Group route user
 Route::middleware('auth:sanctum')->group(function() {
     Route::get('user', [UserController::class, 'fetch']); // Method fetch (Untuk mengambil data user)
+    Route::post('user', [UserController::class, 'updateProfile']); // Update profile post
+    Route::post('logout', [UserController::class, 'logout']); // Logout and revoked token user
+
 });
