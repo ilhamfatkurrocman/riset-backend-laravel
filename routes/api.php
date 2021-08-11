@@ -33,5 +33,6 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::post('logout', [UserController::class, 'logout']); // Logout and revoked token user
 
     Route::get('transactions', [TransactionController::class, 'all']); // Transaction
+    Route::post('checkout', [TransactionController::class, 'checkout']); // Checkout
 
 });
