@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ProductCategoryController;
 use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\TransactionController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,7 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('user', [UserController::class, 'fetch']); // Method fetch (Untuk mengambil data user)
     Route::post('user', [UserController::class, 'updateProfile']); // Update profile post
     Route::post('logout', [UserController::class, 'logout']); // Logout and revoked token user
+
+    Route::get('transactions', [TransactionController::class, 'all']); // Transaction
 
 });
