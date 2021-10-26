@@ -75,5 +75,6 @@
         <x-jet-button wire:loading.attr="disabled" wire:target="photo">
             {{ __('Save') }}
         </x-jet-button>
+
     </x-slot>
 </x-jet-form-section>
